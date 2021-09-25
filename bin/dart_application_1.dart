@@ -17,6 +17,10 @@ class View {
   }
 }
 
+class Text extends View{
+  String content;
+  Text(int id, this.content, {Color? color}) : super(id, color: color);
+}
 void main() {
   /*
     1) Create class named `Text` that extends/inherits `View` class,
@@ -26,9 +30,10 @@ void main() {
     2) Create new `Text` object with the following:
       var helloText = Text(<random id>, content: 'Hello' )
   */
-
+  
+  
   int id = Random().nextInt(10000);
-
+  var helloText = Text(id,'Hello');
   print('hello: $helloText');
 }
 
@@ -39,5 +44,14 @@ void task2() {
     Separate even numbers from the above `numbers` list.
     List<int> evenNumbers = ...
   */
-  print('evenNumbers: $evenNumbers');
+  List<int> evenNumbers=<int>[];
+ numbers.forEach((num){
+   if(num%2==0)
+   {
+     evenNumbers.add(num);
+   }
+     
+ });
+    
+    print('evenNumbers: $evenNumbers');
 }
